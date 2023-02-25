@@ -1,21 +1,20 @@
 #!/bin/bash
 
-num=100
-first_name="John"
-#last_name="Rudd"
+ls_output_with_dollar=$(ls)
 
-echo "Display Variables"
-echo "Num: $num"
-echo "First Name: $first_name"
+ls_output_with_backtick=`ls`
 
-# Multi Line Comments
-<< EOF
-echo "The way to add"
-echo "multi-line command is"
-echo "less than symbol twice then a literal"
-echo "and same literal at the end"
-EOF
+echo "with dollar: $ls_output_with_dollar"
 
-echo "Multiple comments and single comments added in script"
+echo "with backtick: $ls_output_with_backtick"
 
-echo -e -n "Num: ${num} \nFirst Name: ${first_name}\n"
+todays_date=$(date +"%Y-%m-%d")
+
+echo "Creating text file with today's date as a file name"
+touch ${todays_date}.txt
+
+echo "Adding ls cmd output to file"
+ls > ${todays_date}.txt
+
+echo "Display Context of file"
+cat ${todays_date}.txt

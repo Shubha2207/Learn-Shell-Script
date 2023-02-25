@@ -153,6 +153,39 @@ if variable is not present, then shell will return empty value and not the error
 
 Variable name should start with either letter or underscore symbol only. And variable name can only contain a-z, A-Z, 0-9 and _ character . Shell script is case sensitive.
 
+#### Special Variables
+
+> echo $?
+give the status of previous command, if cmd runs successfully return 0 otherwise 127
+
+### Storing output of command in variable or file
+
+```bash
+#!/bin/bash
+
+ls_output_with_dollar=$(ls)
+
+ls_output_with_backtick=`ls`
+
+echo "with dollar: $ls_output_with_dollar"
+
+echo "with backtick: $ls_output_with_backtick"
+
+
+todays_date=$(date +"%Y-%m-%d")
+
+echo "Creating text file with today's date as a file name"
+touch ${todays_date}.txt
+
+echo "Adding ls cmd output to file"
+ls > ${todays_date}.txt
+
+echo "Display Context of file"
+cat ${todays_date}.txt
+
+```
+
+So using $() and ``, you can get the output of command and store it in variable.
 
 
 ## Extras
@@ -226,3 +259,9 @@ history of commands used
 
 > free -m
 RAM storage details
+
+> date +"%Y-%m-%d"
+Get today's date
+
+> printenv or env
+Get all the environmental variables
