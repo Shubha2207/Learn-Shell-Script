@@ -87,6 +87,35 @@ And provide the path in system-variable PATH.
 > export PATH=${PATH}:/home/user/custom_shell/bin
 // This path is temporarily added.
 
+## Hello World! program in shell
+
+```bash
+#!/bin/bash
+echo "Hello, World!"
+```
+
+echo command works differently with doubl-quote, single-quote and no quotes
+
+> echo "$(ls)"
+
+display output of ls cmd
+
+> echo '$(ls)'
+
+display $(ls), considered as string and not expression
+
+> echo $(ls)
+
+display output of ls command
+
+So if you want to display the output of another command use double-quotes around the expression.
+
+> chmod +x file_name.sh
+
+> ./file_name.sh
+
+
+
 ## Extras
 
 ### bin vs sbin
@@ -140,6 +169,9 @@ After modifying .bashrc or .bash_profile files, you need to run below command to
 > source ~/.bash_profile
 
 ### Linux Commands
+
+> https://www.youtube.com/watch?v=JMT5CGFxa_4&list=PLy7Kah3WzqrHPrgkBgwzXyfDDCvthdUfl
+
 
 > cmd --help
 get more details about command
