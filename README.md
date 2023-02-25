@@ -94,7 +94,7 @@ And provide the path in system-variable PATH.
 echo "Hello, World!"
 ```
 
-echo command works differently with doubl-quote, single-quote and no quotes
+echo command works differently with double-quote, single-quote and no quotes
 
 > echo "$(ls)"
 
@@ -111,8 +111,47 @@ display output of ls command
 So if you want to display the output of another command use double-quotes around the expression.
 
 > chmod +x file_name.sh
-
 > ./file_name.sh
+
+
+> /bin/echo --help
+Use this command to get more details about echo
+
+### Variables in Shell
+
+```bash
+#!/bin/bash
+
+num=100
+first_name="John"
+
+# Single Line Comment
+#last_name="Rudd"
+
+# Multi Line Comments
+
+<< Comments
+echo "The way to add"
+echo "multi-line command is"
+echo "less than symbol twice then a literal"
+echo "and same literal at the end"
+Comments
+
+echo "Display Variables"
+echo "Num: ${num}"
+echo "First Name: ${first_name}"
+
+# To enable echo command to recognize \n character use -e option
+
+echo -e "Num: ${num} \nFirst Name: ${first_name}"
+
+```
+
+While defining variables, there shouldn't be any space on either sides of `=` symbol
+
+if variable is not present, then shell will return empty value and not the error.
+
+Variable name should start with either letter or underscore symbol only. And variable name can only contain a-z, A-Z, 0-9 and _ character . Shell script is case sensitive.
 
 
 
